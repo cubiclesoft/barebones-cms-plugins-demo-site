@@ -88,17 +88,17 @@ $(function() {
 			if (!isset($contentopts["fields"]))  $contentopts["fields"] = array();
 
 			$rooturl = str_replace("http://", "https://", $config["rooturl"]);
-			$custom = "<div style=\"white-space: nowrap\"><b>Host</b></div>\n";
+			$custom = "<div style=\"white-space: nowrap;\"><b>Host</b></div>\n";
 			$custom .= "<div style=\"word-break: break-word;\">" . htmlspecialchars($rooturl) . "</div>\n";
 
-			$custom .= "<div style=\"white-space: nowrap\"><b>Read only API key</b></div>\n";
+			$custom .= "<div style=\"white-space: nowrap; margin-top: 0.5em;\"><b>Read only API key</b></div>\n";
 			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["read_apikey"]) . "</div>\n";
 
-			$custom .= "<div style=\"white-space: nowrap\"><b>Read/write API key</b></div>\n";
+			$custom .= "<div style=\"white-space: nowrap; margin-top: 0.5em;\"><b>Read/write API key</b></div>\n";
 			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_apikey"]) . "</div>\n";
 
-			$custom .= "<div style=\"white-space: nowrap\"><b>Read/write secret</b></div>\n";
-			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_secret"]) . "</div>\n";
+			$custom .= "<div style=\"white-space: nowrap; margin-top: 0.5em;\"><b>Read/write secret</b></div>\n";
+			$custom .= "<div style=\"word-break: break-all; hyphens: auto; margin-bottom: 0.3em;\">" . htmlspecialchars($config["readwrite_secret"]) . "</div>\n";
 
 			$contentopts["fields"][] = array(
 				"title" => "API Access",
