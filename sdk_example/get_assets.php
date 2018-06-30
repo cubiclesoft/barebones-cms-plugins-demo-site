@@ -27,6 +27,7 @@
 	}
 
 	$assets = $result["assets"];
+	echo "Retrieved assets:  " . count($assets) . "\n\n";
 
 	foreach ($assets as $asset)
 	{
@@ -35,4 +36,6 @@
 		$lang = $cms->GetPreferredAssetLanguage($asset, "", "en-us");
 		echo $asset["id"] . " | " . $asset["uuid"] . " | " . $asset["langinfo"][$lang]["title"] . "\n";
 	}
+
+	echo "Done.\n";
 ?>
