@@ -88,10 +88,17 @@ $(function() {
 			if (!isset($contentopts["fields"]))  $contentopts["fields"] = array();
 
 			$rooturl = str_replace("http://", "https://", $config["rooturl"]);
-			$custom = "<span style=\"white-space: nowrap\"><b>Host:</b></span><br><span style=\"word-break: break-word;\">" . htmlspecialchars($rooturl) . "</span><br>\n";
-			$custom .= "<span style=\"white-space: nowrap\"><b>Read only API key:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["read_apikey"]) . "</span><br>\n";
-			$custom .= "<span style=\"white-space: nowrap\"><b>Read/write API key:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_apikey"]) . "</span><br>\n";
-			$custom .= "<span style=\"white-space: nowrap\"><b>Read/write secret:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_secret"]) . "</span><br>\n";
+			$custom = "<div style=\"white-space: nowrap\"><b>Host</b></div>\n";
+			$custom .= "<div style=\"word-break: break-word;\">" . htmlspecialchars($rooturl) . "</div>\n";
+
+			$custom .= "<div style=\"white-space: nowrap\"><b>Read only API key</b></div>\n";
+			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["read_apikey"]) . "</div>\n";
+
+			$custom .= "<div style=\"white-space: nowrap\"><b>Read/write API key</b></div>\n";
+			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_apikey"]) . "</div>\n";
+
+			$custom .= "<div style=\"white-space: nowrap\"><b>Read/write secret</b></div>\n";
+			$custom .= "<div style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_secret"]) . "</div>\n";
 
 			$contentopts["fields"][] = array(
 				"title" => "API Access",
@@ -103,7 +110,7 @@ $(function() {
 			$contentopts["fields"][] = array(
 				"title" => "cURL Example",
 				"type" => "custom",
-				"value" => "<div class=\"staticwrap\"><span style=\"word-break: break-all; hyphens: auto;\">curl -H 'X-APIKey: " . htmlspecialchars($config["read_apikey"]) . "' '" . htmlspecialchars($rooturl) . "?ver=1&api=assets&start=1&end=" . time() . "&limit=50'</span></div>",
+				"value" => "<div class=\"staticwrap\"><div style=\"word-break: break-all; hyphens: auto;\">curl -H 'X-APIKey: " . htmlspecialchars($config["read_apikey"]) . "' '" . htmlspecialchars($rooturl) . "?ver=1&api=assets&start=1&end=" . time() . "&limit=50'</div></div>",
 				"htmldesc" => "Copy and paste into a terminal.  Requires cURL to be installed."
 			);
 
