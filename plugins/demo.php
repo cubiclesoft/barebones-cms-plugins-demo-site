@@ -88,22 +88,22 @@ $(function() {
 			if (!isset($contentopts["fields"]))  $contentopts["fields"] = array();
 
 			$rooturl = str_replace("http://", "https://", $config["rooturl"]);
-			$custom = "<b>Host:</b> " . htmlspecialchars($rooturl) . "<br>\n";
-			$custom .= "<b>Read only API key:</b> " . htmlspecialchars($config["read_apikey"]) . "<br>\n";
-			$custom .= "<b>Read/write API key:</b> " . htmlspecialchars($config["readwrite_apikey"]) . "<br>\n";
-			$custom .= "<b>Read/write secret:</b> " . htmlspecialchars($config["readwrite_secret"]) . "<br>\n";
+			$custom = "<span style=\"white-space: nowrap\"><b>Host:</b></span><br><span style=\"word-break: break-word;\">" . htmlspecialchars($rooturl) . "</span><br>\n";
+			$custom .= "<span style=\"white-space: nowrap\"><b>Read only API key:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["read_apikey"]) . "</span><br>\n";
+			$custom .= "<span style=\"white-space: nowrap\"><b>Read/write API key:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_apikey"]) . "</span><br>\n";
+			$custom .= "<span style=\"white-space: nowrap\"><b>Read/write secret:</b></span><br><span style=\"word-break: break-all; hyphens: auto;\">" . htmlspecialchars($config["readwrite_secret"]) . "</span><br>\n";
 
 			$contentopts["fields"][] = array(
 				"title" => "API Access",
 				"type" => "custom",
 				"value" => "<div class=\"staticwrap\">" . $custom . "</div>",
-				"htmldesc" => "<a href=\"../demo_php_sdk_example.zip\">Download prepared PHP SDK</a> | <a href=\"https://github.com/cubiclesoft/barebones-cms/blob/master/docs/sdk.md\" target=\"_blank\">SDK documentation</a>"
+				"htmldesc" => "<span style=\"white-space: nowrap\"><a href=\"../demo_php_sdk_example.zip\">Download prepared PHP SDK</a> |</span> <span style=\"white-space: nowrap\"><a href=\"https://github.com/cubiclesoft/barebones-cms/blob/master/docs/sdk.md\" target=\"_blank\">SDK documentation</a></span>"
 			);
 
 			$contentopts["fields"][] = array(
 				"title" => "cURL Example",
 				"type" => "custom",
-				"value" => "<div class=\"staticwrap\">curl -H 'X-APIKey: " . htmlspecialchars($config["read_apikey"]) . "' '" . htmlspecialchars($rooturl) . "?ver=1&api=assets&start=1&end=" . time() . "&limit=50'</div>",
+				"value" => "<div class=\"staticwrap\"><span style=\"word-break: break-all; hyphens: auto;\">curl -H 'X-APIKey: " . htmlspecialchars($config["read_apikey"]) . "' '" . htmlspecialchars($rooturl) . "?ver=1&api=assets&start=1&end=" . time() . "&limit=50'</span></div>",
 				"htmldesc" => "Copy and paste into a terminal.  Requires cURL to be installed."
 			);
 
