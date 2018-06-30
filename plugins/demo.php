@@ -97,8 +97,19 @@ $(function() {
 				"title" => "API Access",
 				"type" => "custom",
 				"value" => "<div class=\"staticwrap\">" . $custom . "</div>",
-				"desc" => "Try out the SDK."
+				"htmldesc" => "<a href=\"../demo_php_sdk_example.zip\">Download prepared PHP SDK</a> | <a href=\"https://github.com/cubiclesoft/barebones-cms/blob/master/docs/sdk.md\" target=\"_blank\">SDK documentation</a>"
 			);
+
+			// Don't show the cURL line on Windows.
+			if (strtoupper(substr(php_uname("s"), 0, 3)) != "WIN")
+			{
+				$contentopts["fields"][] = array(
+					"title" => "cURL Example",
+					"type" => "custom",
+					"value" => "<div class=\"staticwrap\">curl -H 'X-APIKey: " . htmlspecialchars($config["read_apikey"]) . "' '" . htmlspecialchars($rooturl) . "?ver=1&api=assets&start=1&end=`date +%s`&limit=50'</div>",
+					"htmldesc" => "Copy and paste into a terminal.  Requires cURL to be installed."
+				);
+			}
 
 			if ($config["db_select"] === "sqlite")
 			{
