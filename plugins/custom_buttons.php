@@ -1,7 +1,7 @@
 <?php
 	// Barebones CMS demo site plugin.
 	// Add a custom template to the Embed dialog.
-	// (C) 2018 CubicleSoft.  All Rights Reserved.
+	// (C) 2019 CubicleSoft.  All Rights Reserved.
 
 	class Plugin_AddEditAsset_Story_CustomButtonsTemplate
 	{
