@@ -1,7 +1,7 @@
 <?php
 	// Barebones CMS demo site plugin.
 	// Add a custom CSS class to the ContentTools editor.
-	// (C) 2019 CubicleSoft.  All Rights Reserved.
+	// (C) 2023 CubicleSoft.  All Rights Reserved.
 
 	class Plugin_CustomCSSClasses
 	{

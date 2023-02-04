@@ -1,7 +1,7 @@
 <?php
 	// Barebones CMS demo site plugin.
 	// Add SDK information to the home screen and session expiration tracking across the admin interface.
-	// (C) 2019 CubicleSoft.  All Rights Reserved.
+	// (C) 2023 CubicleSoft.  All Rights Reserved.
 
 	class Plugin_BarebonesCMSDemo
 	{
